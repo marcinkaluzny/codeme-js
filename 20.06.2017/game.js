@@ -11,6 +11,9 @@
   let score = 0;
 	 
 	function createView(wholeDocument) {
+		// nie ma co siegac do html - lepiej juz do body, a najlepiej ograniczyc view do kontenera gry
+		// i ewentualnie sam kontener wpisac jako wlasnosc wrapper ;) - dlaczego? - bo jak bedzie kilka aplikacji
+		// i kazda bedzie korzystala z tej samej funkcji createView i w wielu aplikacjach bedzie element o tym samym ref ;)
 		const refElements = wholeDocument.querySelectorAll('[ref]');
 		[].forEach.call(refElements, function (refElement) {
 			const name = refElement.getAttribute('ref');
@@ -131,6 +134,7 @@
     view.ball.style.left = ballLeft + 'px';
   }
   
+  // treść zadania brzmiał trochę inaczej niż prezentowane rozwiazanie ;)
   function createBricks() {
     const args = arguments;
 	let numberOfBricks = args[0] || 30;
@@ -141,6 +145,7 @@
 	    view.bricks.appendChild(clone);
 	}
   }
+  // nie jest to pełne rozwiazanie zadania ;)
   createBricks(20, [3, 5, 7]);
 
 }());
